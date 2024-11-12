@@ -1,9 +1,14 @@
 <header>
-  <nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/products">Produtos</a>
-    <a routerLink="/cart">Carrinho</a>
-  </nav>
+  <mat-toolbar color="primary">
+    <span>Meu E-commerce</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/products">Produtos</button>
+    <button mat-button routerLink="/cart">Carrinho</button>
+    <button (click)="logout()">Logout</button>
+
+  </mat-toolbar>
+  
 </header>
 
 <main>
