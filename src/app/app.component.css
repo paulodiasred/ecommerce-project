@@ -1,0 +1,32 @@
+header {
+    background-color: #4CAF50;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+  }
+  
+  header nav a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    padding: 2rem;
+    min-height: calc(100vh - 100px); /* Ajuste para cabeçalho/rodapé */
+  }
+  
+  footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  

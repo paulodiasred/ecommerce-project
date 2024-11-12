@@ -1,0 +1,19 @@
+<div>
+  <input
+    type="text"
+    placeholder="Buscar produtos..."
+    [(ngModel)]="searchTerm"
+    (input)="filterProducts()"
+  />
+</div>
+
+<div class="product-grid">
+    <div *ngFor="let product of filteredProducts" class="product-card">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Preço: R$ {{ product.price }}</p>
+      <img [src]="product.imageUrl" alt="{{ product.name }}">
+      <a [routerLink]="['/product', product.id]" class="button">Ver Detalhes</a>
+    </div>
+  </div>
+  

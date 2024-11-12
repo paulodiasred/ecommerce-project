@@ -1,0 +1,56 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    width: 350px;
+    height: 250px;
+  }
+  
+  .product-card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .product-card button:hover {
+    background-color: #45a049;
+  }
+
+  .product-card p {
+    font-size: 13px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+  }
+  
+  .button {
+    display: inline-block; /* Para agir como botão */
+    padding: 0.5rem 1rem;  /* Espaçamento interno */
+    text-align: center;    /* Alinhar texto */
+    color: white;          /* Cor do texto */
+    background-color: #4CAF50; /* Cor de fundo */
+    border: none;          /* Remover borda */
+    border-radius: 5px;    /* Bordas arredondadas */
+    text-decoration: none; /* Remover sublinhado */
+    cursor: pointer;       /* Alterar cursor para mãozinha */
+  }
+  
+  .button:hover {
+    background-color: #45a049; /* Cor de fundo ao passar o mouse */
+  }
+  
