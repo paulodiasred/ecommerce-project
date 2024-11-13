@@ -1,13 +1,24 @@
-<h2>Carrinho de Compras</h2>
-
 <div *ngIf="products.length > 0; else emptyCart">
-  <div *ngFor="let product of products" class="cart-item">
-    <h4>{{ product.name }}</h4>
-    <p>Preço: R$ {{ product.price }}</p>
-    <button (click)="removeFromCart(product.id)">Remover</button>
-  </div>
-</div>
+  <!-- Exibe os itens do carrinho -->
+  <mat-card *ngFor="let product of products" class="product-card">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle>Preço: R$ {{ product.price }}</mat-card-subtitle>
+    </mat-card-header>
+  <mat-card-content>
+    <div class="product-image-container">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" width="100" height="150">
+    </div>
+    <p>Descrição: {{ product.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)="confirmRemove(product.id)">Remover</button>
+  </mat-card-actions>
+</mat-card>
 
+<a mat-raised-button color="primary" routerLink="/checkout" class="checkout-button">Ir para Checkout</a>
+
+</div>
 <ng-template #emptyCart>
   <p>O carrinho está vazio.</p>
 </ng-template>

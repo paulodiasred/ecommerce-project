@@ -120,9 +120,13 @@ export class ProductService {
     }
   ];
 
-  constructor() {}
+  constructor() { }
 
   getProducts(): Product[] {
     return this.products;
+  }
+  getFeaturedProducts(): Product[] {
+    // Ordena os produtos pelo preço em ordem crescente e retorna os 5 primeiros
+    return this.products.sort((a, b) => a.price - b.price).slice(0, 5);
   }
 }

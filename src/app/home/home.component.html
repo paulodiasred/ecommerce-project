@@ -1,1 +1,23 @@
-<p>home works!</p>
+<mat-card class="banner-card">
+  <!-- <img mat-card-image src="assets/banner.webp" alt="Bem-vindo ao nosso E-commerce"> -->
+  <mat-card-content>
+    <h2>Bem-vindo ao E-commerce do Paulão!</h2>
+    <p>Explore os melhores produtos e ofertas exclusivas.</p>
+  </mat-card-content>
+</mat-card>
+
+<div class="products-container">
+    <mat-card *ngFor="let product of featuredProducts" class="product-card">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle>Preço: R$ {{ product.price }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="product.imageUrl" alt="{{ product.name }}">
+    <mat-card-content>
+      <p>{{ product.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [routerLink]="['/product-detail', product.id]">Ver Detalhes</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

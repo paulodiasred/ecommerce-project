@@ -1,0 +1,97 @@
+.banner-card {
+  background-image: url('/assets/banner_ecommerce.svg');
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Ajuste a altura conforme necessário */
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Para garantir que o pseudo-elemento não ultrapasse os limites */
+}
+
+.banner-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Ajuste a opacidade conforme necessário */
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.banner-content {
+  position: relative; /* Certifique-se de que o conteúdo esteja acima do pseudo-elemento */
+  z-index: 2; /* Este valor garante que o texto estará acima do pseudo-elemento escuro */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.banner-content h1, .banner-content p {
+  color: #fff; /* Cor branca */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra para melhorar a legibilidade */
+}
+
+
+
+.banner-content h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Adiciona sombra para melhorar a legibilidade */
+  
+}
+
+.banner-content p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adiciona sombra para melhorar a legibilidade */
+}
+
+.banner-content button {
+  padding: 10px 20px;
+  font-size: 1.1em;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.banner-content button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.welcome-text {
+  text-align: center;
+  margin: 20px;
+}
+
+.products-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.product-card {
+  width: 300px;
+  margin: 8px;
+}
