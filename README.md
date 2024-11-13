@@ -1,3 +1,5 @@
+## EM ANDAMENTO
+
 # E-commerce Angular Project
 
 Bem-vindo ao **E-commerce do Paulão**! Este é um projeto de e-commerce desenvolvido usando Angular e Angular Material. A aplicação apresenta uma interface moderna e responsiva, com componentes standalone para maior eficiência.
