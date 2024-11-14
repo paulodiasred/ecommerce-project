@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductService, Product } from '../product.service';
 import { RouterModule } from '@angular/router';
 import { CartService } from '../cart.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-detail',
@@ -19,10 +20,15 @@ export class ProductDetailComponent {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartService: CartService // Injetar o CartService
+    private cartService: CartService,
+    private location: Location
   ) {
     const productId = Number(this.route.snapshot.paramMap.get('id'));
     this.product = this.productService.getProducts().find(p => p.id === productId);
+  }
+
+  goBack(): void {
+    this.location.back();  // Volta à página anterior
   }
 
   addToCart(product: Product) {

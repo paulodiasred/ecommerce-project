@@ -1,121 +1,82 @@
-<h2>Checkout</h2>
 
-<p>Total do Carrinho: R$ {{ totalCartValue }}</p>
+<div class="checkout">
+  <h2>Checkout</h2>
+  <p>Total do Carrinho: R$ {{ totalCartValue }}</p>
+</div>
 
-<form #checkoutForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-  <!-- Nome -->
-  <div>
-    <label for="name">Nome Completo:</label>
-    <input
-      type="text"
-      id="name"
-      [(ngModel)]="name"
-      name="name"
-      placeholder="Ex.: João da Silva"
-      required
-      #nameModel="ngModel"
-    />
-    <div *ngIf="nameModel.invalid && nameModel.touched">
-      <small>O nome é obrigatório.</small>
-    </div>
-  </div>
-
-  <!-- E-mail -->
-  <div>
-    <label for="email">E-mail:</label>
-    <input
-      type="email"
-      id="email"
-      [(ngModel)]="email"
-      name="email"
-      placeholder="Ex.: exemplo@email.com"
-      required
-      #emailModel="ngModel"
-    />
-    <div *ngIf="emailModel.invalid && emailModel.touched">
-      <small>Por favor, insira um e-mail válido.</small>
-    </div>
-  </div>
-
-  <!-- Endereço -->
-  <div>
-    <label for="address">Endereço:</label>
-    <input
-      type="text"
-      id="address"
-      [(ngModel)]="address"
-      name="address"
-      placeholder="Ex.: Rua Exemplo, 123"
-      required
-      #addressModel="ngModel"
-    />
-    <div *ngIf="addressModel.invalid && addressModel.touched">
-      <small>O endereço é obrigatório.</small>
-    </div>
-  </div>
-
-  <!-- Método de Pagamento -->
-  <div>
-    <h3>Escolha o Método de Pagamento</h3>
-    <mat-radio-group [(ngModel)]="selectedPaymentMethod" name="paymentMethod">
-      <mat-radio-button value="creditCard">Cartão de Crédito</mat-radio-button>
-      <mat-radio-button value="debitCard">Cartão de Débito</mat-radio-button>
-      <mat-radio-button value="boleto">Boleto Bancário</mat-radio-button>
-    </mat-radio-group>
-  </div>
-
-  <!-- Informações de Pagamento Condicionais -->
-  <div *ngIf="selectedPaymentMethod === 'creditCard' || selectedPaymentMethod === 'debitCard'">
-    <label for="paymentInfo">Número do Cartão:</label>
-    <input
-      type="text"
-      id="paymentInfo"
-      [(ngModel)]="paymentInfo"
-      name="paymentInfo"
-      placeholder="Ex.: 1234567812345678"
-      required
-      pattern="^\d{16}$"
-      #paymentModel="ngModel"
-    />
-    <div *ngIf="paymentModel.invalid && paymentModel.touched">
-      <small *ngIf="paymentModel.errors?.['required']">O número do cartão é obrigatório.</small>
-      <small *ngIf="paymentModel.errors?.['pattern']">Por favor, insira um número de cartão válido (16 dígitos).</small>
+<div class="form">
+  <form #checkoutForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <!-- Nome Completo -->
+    <div>
+      <label for="name">Nome Completo:</label>
+      <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="Ex.: João da Silva" required
+        #nameModel="ngModel" />
+      <div *ngIf="nameModel.invalid && nameModel.touched">
+        <small>O nome é obrigatório.</small>
+      </div>
     </div>
 
-    <label for="expiryDate">Data de Validade:</label>
-    <input
-      type="text"
-      id="expiryDate"
-      [(ngModel)]="expiryDate"
-      name="expiryDate"
-      placeholder="MM/AA"
-      required
-      #expiryModel="ngModel"
-    />
-    <div *ngIf="expiryModel.invalid && expiryModel.touched">
-      <small>A data de validade é obrigatória.</small>
+    <!-- E-mail -->
+    <div>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Ex.: exemplo@email.com" required
+        #emailModel="ngModel" />
+      <div *ngIf="emailModel.invalid && emailModel.touched">
+        <small>Por favor, insira um e-mail válido.</small>
+      </div>
     </div>
 
-    <label for="cvv">CVV:</label>
-    <input
-      type="text"
-      id="cvv"
-      [(ngModel)]="cvv"
-      name="cvv"
-      placeholder="Ex.: 123"
-      required
-      pattern="^\d{3}$"
-      #cvvModel="ngModel"
-    />
-    <div *ngIf="cvvModel.invalid && cvvModel.touched">
-      <small>O CVV é obrigatório e deve ter 3 dígitos.</small>
+    <!-- Endereço -->
+    <div>
+      <label for="address">Endereço:</label>
+      <input type="text" id="address" [(ngModel)]="address" name="address" placeholder="Ex.: Rua Exemplo, 123" required
+        #addressModel="ngModel" />
+      <div *ngIf="addressModel.invalid && addressModel.touched">
+        <small>O endereço é obrigatório.</small>
+      </div>
     </div>
-  </div>
 
-  <div *ngIf="selectedPaymentMethod === 'boleto'">
-    <p>Você selecionou Boleto Bancário. Um boleto será gerado após a finalização da compra.</p>
-  </div>
+    <!-- Método de Pagamento -->
+    <div>
+      <h3>Escolha o Método de Pagamento</h3>
+      <mat-radio-group [(ngModel)]="selectedPaymentMethod" name="paymentMethod">
+        <mat-radio-button value="creditCard">Cartão de Crédito</mat-radio-button>
+        <mat-radio-button value="debitCard">Cartão de Débito</mat-radio-button>
+        <mat-radio-button value="boleto">Boleto Bancário</mat-radio-button>
+      </mat-radio-group>
+    </div>
 
-  <!-- Botão de Submissão -->
-  <button type="submit" [disabled]="checkoutForm.invalid">Finalizar Compra</button>
-</form>
+    <!-- Informações de Pagamento Condicionais -->
+    <div class="payment" *ngIf="selectedPaymentMethod === 'creditCard' || selectedPaymentMethod === 'debitCard'">
+      <label for="paymentInfo">Número do Cartão:</label>
+      <input type="text" id="paymentInfo" [(ngModel)]="paymentInfo" name="paymentInfo"
+        placeholder="Ex.: 1234567812345678" required pattern="^\d{16}$" #paymentModel="ngModel" />
+      <div *ngIf="paymentModel.invalid && paymentModel.touched">
+        <small *ngIf="paymentModel.errors?.['required']">O número do cartão é obrigatório.</small>
+        <small *ngIf="paymentModel.errors?.['pattern']">Por favor, insira um número de cartão válido (16
+          dígitos).</small>
+      </div>
+
+      <label for="expiryDate">Data de Validade:</label>
+      <input type="text" id="expiryDate" [(ngModel)]="expiryDate" name="expiryDate" placeholder="MM/AA" required
+        #expiryModel="ngModel" />
+      <div *ngIf="expiryModel.invalid && expiryModel.touched">
+        <small>A data de validade é obrigatória.</small>
+      </div>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" [(ngModel)]="cvv" name="cvv" placeholder="Ex.: 123" required pattern="^\d{3}$"
+        #cvvModel="ngModel" />
+      <div *ngIf="cvvModel.invalid && cvvModel.touched">
+        <small>O CVV é obrigatório e deve ter 3 dígitos.</small>
+      </div>
+    </div>
+
+    <div *ngIf="selectedPaymentMethod === 'boleto'">
+      <p>Você selecionou Boleto Bancário. Um boleto será gerado após a finalização da compra.</p>
+    </div>
+
+    <!-- Botão de Submissão -->
+    <button type="submit" [disabled]="checkoutForm.invalid">Finalizar Compra</button>
+  </form>
+</div>

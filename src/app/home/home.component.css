@@ -2,7 +2,8 @@
   background-image: url('/assets/banner_ecommerce.svg');
   background-size: cover;
   background-position: center;
-  height: 400px; /* Ajuste a altura conforme necessário */
+  height: 400px;
+  /* Ajuste a altura conforme necessário */
   color: white;
   padding: 50px 20px;
   text-align: center;
@@ -13,7 +14,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden; /* Para garantir que o pseudo-elemento não ultrapasse os limites */
+  overflow: hidden;
+  /* Para garantir que o pseudo-elemento não ultrapasse os limites */
 }
 
 .banner-card::before {
@@ -23,48 +25,50 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* Ajuste a opacidade conforme necessário */
+  background: rgba(0, 0, 0, 0.2);
+  /* Ajuste a opacidade conforme necessário */
   z-index: 2;
   border-radius: 10px;
 }
 
 .banner-content {
-  position: relative; /* Certifique-se de que o conteúdo esteja acima do pseudo-elemento */
-  z-index: 2; /* Este valor garante que o texto estará acima do pseudo-elemento escuro */
+  position: relative;
+  /* Certifique-se de que o conteúdo esteja acima do pseudo-elemento */
+  z-index: 2;
+  /* Este valor garante que o texto estará acima do pseudo-elemento escuro */
   padding: 20px;
   border-radius: 5px;
 }
 
-.banner-content h1, .banner-content p {
-  color: #fff; /* Cor branca */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adiciona sombra para melhorar a legibilidade */
+.banner-text-container {
+  text-align: center;
+  margin: 20px auto;
+  /* Centraliza o texto com um espaço superior */
+  max-width: 800px;
+  /* Ajusta a largura máxima para controle de layout */
+  color: #333;
+  /* Cor do texto */
 }
 
-
-
-.banner-content h1 {
-  font-size: 3em;
+.banner-text-container h2 {
+  font-size: 2.5em;
   margin-bottom: 10px;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Adiciona sombra para melhorar a legibilidade */
-  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.banner-content p {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Adiciona sombra para melhorar a legibilidade */
+.banner-text-container p {
+  font-size: 1.3em;
+  margin-top: 5px;
+  color: #555;
 }
 
-.banner-content button {
-  padding: 10px 20px;
-  font-size: 1.1em;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.banner-text-container:hover h2,
+.banner-text-container:hover p {
+  transform: scale(1.02);
+  /* Pequeno efeito de zoom */
+  transition: transform 0.3s ease-in-out;
 }
+
 
 .banner-content button:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -91,7 +95,57 @@
   justify-content: center;
 }
 
+/* Ajuste para garantir a altura consistente dos cards */
 .product-card {
-  width: 300px;
-  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto; /* Remover a altura fixa */
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;/* Garante que o conteúdo dentro do card fique bem distribuído */
+  width: 250px; /* Reduzir a largura do card */
+  max-width: 100%; /* Garante que o card ocupe até 100% da largura disponível */
+}
+
+/* Para garantir que os botões fiquem no final */
+.product-card mat-card-actions {
+  margin-top: auto;    /* Empurra o botão para o final do card */
+}
+
+/* Para as imagens, garantindo que não ultrapassem a altura do card */
+.product-card img {
+  width: 100%;        /* A imagem ocupa toda a largura do card */
+  height: auto;       /* A altura é ajustada automaticamente para manter as proporções */
+  object-fit: contain;   /* Garante que as imagens se ajustem ao tamanho do container */
+}
+
+/* Se necessário, ajuste o tamanho da descrição também */
+.product-card mat-card-content {
+  flex-grow: 1;        /* Faz a descrição crescer para ocupar o restante do espaço */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.product-card button {
+  background-color: #b8860b;  /* Cor de fundo do botão */
+  color: white;               /* Cor da fonte */
+  padding: 10px 20px;         /* Ajusta o tamanho do botão */
+  border-radius: 5px;         /* Arredonda os cantos do botão */
+  font-size: 14px;            /* Tamanho da fonte */
+  text-transform: uppercase;  /* Coloca o texto do botão em letras maiúsculas */
+  width: auto;                /* Faz o botão ter o tamanho apropriado */
+  transition: background-color 0.3s;  /* Transição suave para a cor de fundo */
+}
+
+.product-card button:hover {
+  background-color: rgba(184, 134, 11, 0.2);  /* Cor do botão ao passar o mouse */
+}
+
+.product-card button:focus {
+  outline: none;  /* Remove o contorno padrão de foco */
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.service'; // Importe o modelo de Produto
+import { CartProduct } from './cart/cart-product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,10 @@ export class CartService {
     console.log('Item removido:', productId); // Log para confirmar que a remoção foi feita
     console.log('Itens restantes:', this.items); // Log para verificar o estado atual
     this.saveCart(); // Atualiza o `localStorage` após remover
+  }
+
+  updateCart(updatedProducts: CartProduct[]): void {
+    localStorage.setItem('cartItems', JSON.stringify(updatedProducts)); // Armazenando no localStorage, ou usando outro meio de persistência
   }
 
   private saveCart(): void {

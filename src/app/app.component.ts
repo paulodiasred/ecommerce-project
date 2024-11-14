@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';  // Importar Router
 import { RouterModule } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -13,13 +14,13 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
+  title = 'E-commerce';
 
-  // Se precisar implementar a função de logout, você pode adicionar aqui:
-  logout() {
-    localStorage.removeItem('isLoggedIn');
-    // Adicione a lógica para redirecionar usando o roteador se necessário
+  constructor(private router: Router) {}  // Injetar o Router
+
+  // Método de logout
+  logout(): void {
+    localStorage.removeItem('isLoggedIn');  // Limpar o item de autenticação
+    this.router.navigate(['/login']);  // Redirecionar para a página de login
   }
 }
