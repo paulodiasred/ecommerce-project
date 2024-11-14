@@ -62,11 +62,22 @@
   color: #555;
 }
 
-.banner-text-container:hover h2,
-.banner-text-container:hover p {
-  transform: scale(1.02);
-  /* Pequeno efeito de zoom */
-  transition: transform 0.3s ease-in-out;
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02); /* O zoom é o tamanho maior */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Aplica a animação ao texto */
+.banner-text-container h2,
+.banner-text-container p {
+  animation: zoomInOut 3s infinite ease-in-out; /* 3s para cada ciclo e infinita */
 }
 
 
@@ -108,6 +119,24 @@
   margin-bottom: 20px;/* Garante que o conteúdo dentro do card fique bem distribuído */
   width: 250px; /* Reduzir a largura do card */
   max-width: 100%; /* Garante que o card ocupe até 100% da largura disponível */
+  transition: transform 0.3s ease-in-out; /* Transição suave */
+  transform-origin: center; /* Garante que o aumento seja feito a partir do centro */
+}
+
+.product-card:hover {
+  animation: pulse 1.5s infinite; /* Aplica a animação de pulsação */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Tamanho original */
+  }
+  50% {
+    transform: scale(1.1); /* Aumento de 10% */
+  }
+  100% {
+    transform: scale(1); /* Retorna ao tamanho original */
+  }
 }
 
 /* Para garantir que os botões fiquem no final */

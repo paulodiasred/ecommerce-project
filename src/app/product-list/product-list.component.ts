@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CartService } from '../cart.service';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CartProduct } from '../cart/cart-product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -41,11 +42,17 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(product: Product): void {
-    this.cartService.addToCart(product);
+
+    const cartProduct: CartProduct = {
+      ...product,    // Espalha as propriedades de 'Product'
+      quantity: 1    // Define o valor de 'quantity' como 1 (ou outro valor desejado)
+    };
+
+    this.cartService.addToCart(cartProduct);
     console.log('Produto adicionado ao carrinho:', product);
 
     this.snackBar.open('Produto adicionado ao carrinho!', 'Fechar', {
-      duration: 3000,
+      duration: 3000
       // Aqui você pode adicionar a lógica para realmente adicionar ao serviço de carrinho, se necessário
     });
   }

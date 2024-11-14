@@ -13,6 +13,24 @@
   padding: 1rem;
   border-radius: 5px;
   text-align: center;
+  transition: transform 0.3s ease-in-out; /* Transição suave */
+  transform-origin: center; /* Garante que o aumento seja feito a partir do centro */
+}
+
+.product-card:hover {
+  animation: pulse 1.5s infinite; /* Aplica a animação de pulsação */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Tamanho original */
+  }
+  50% {
+    transform: scale(1.1); /* Aumento de 10% */
+  }
+  100% {
+    transform: scale(1); /* Retorna ao tamanho original */
+  }
 }
 
 .product-card img {

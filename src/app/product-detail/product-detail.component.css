@@ -1,33 +1,49 @@
+/* Geral */
 img {
-    max-width: 100%;
-    width: 350px;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  
-  button {
-    background-color: #b8860b;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  button:hover {
-    background-color: rgba(184, 134, 11, 0.2);
-  }
-  
-  /* Contêiner principal da página de detalhes */
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Estilos dos botões */
+button {
+  background-color: #b8860b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(184, 134, 11, 0.6);
+}
+
+/* Botão de Voltar */
+.back-button {
+  margin-top: 10px;
+  background-color: #666;
+}
+
+.back-button:hover {
+  background-color: #444;
+}
+
+/* Contêiner principal da página de detalhes */
 .page-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
   padding: 20px;
   text-align: center;
   margin-top: -30px;
+  background-color: #f4f4f4;
+  min-height: calc(100vh - 80px);
 }
+
 /* Contêiner do conteúdo da página */
 .page-content {
   display: flex;
@@ -38,28 +54,83 @@ img {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
-  width: 100%; 
-  margin-bottom: -30px;
-}
-
-.page-content img {
   width: 100%;
-  max-width: 300px;       /* Limita a largura da imagem */
-  height: auto;
-  margin-bottom: 15px;
+  margin-bottom: -30px;
+  text-align: left;
 }
 
+/* Estilos de título e descrição */
 .page-content h2 {
-  font-size: 24px;
+  font-size: 28px;
   margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
 }
 
 .page-content p {
   font-size: 16px;
   color: #555;
+  margin: 5px 0;
 }
 
 .page-content .price {
+  font-size: 18px;
   font-weight: bold;
+  color: #b8860b;
   margin: 10px 0;
+}
+
+/* Imagem do Produto */
+/* Imagem do Produto */
+.page-content img {
+  width: 100%;                /* A imagem ocupará toda a largura do contêiner */
+  max-width: 400px;           /* Limita a largura máxima da imagem */
+  margin-bottom: 15px;        /* Espaçamento inferior */
+  border-radius: 8px;         /* Bordas arredondadas */
+  display: block;             /* Garante que a imagem seja tratada como bloco */
+  margin-left: auto;          /* Centraliza a imagem horizontalmente */
+  margin-right: auto;         /* Centraliza a imagem horizontalmente */
+}
+
+
+/* Trailer */
+iframe {
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Estilo para a seção de trailer */
+.page-content div {
+  margin-top: 15px;
+}
+
+.page-content .additional-info {
+  margin-top: 20px;
+}
+
+.page-content .additional-info p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.page-content .additional-info strong {
+  color: #333;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .page-content {
+    width: 100%;
+    padding: 10px;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
 }

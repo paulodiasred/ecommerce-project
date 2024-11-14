@@ -25,14 +25,9 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     // Recupera os itens do carrinho armazenados no localStorage
-    const savedCartItems = localStorage.getItem('cartItems');
-  
-    if (savedCartItems) {
-      // Se houver itens no localStorage, carrega os produtos com as quantidades
-      this.products = JSON.parse(savedCartItems); // Converte os itens salvos para objetos do tipo CartProduct
-    } else {
-      this.products = []; // Se não houver nada no localStorage, carrinho vazio
-    }
+    this.cartService.cartItems$.subscribe(cartItems => {
+      this.products = cartItems; // Atualiza a lista de produtos
+    });  
   }
   
 
@@ -64,6 +59,9 @@ export class CartComponent implements OnInit {
   }
 
   getTotalPrice(product: CartProduct): number {
+    if (isNaN(product.price) || isNaN(product.quantity)) {
+      return 0;
+    }
     return product.price * product.quantity;
   }
 }

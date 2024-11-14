@@ -64,16 +64,18 @@ mat-toolbar {
 
 button[mat-button] {
   color: white;
-  font-weight: bold;
+  padding: 10px 20px;  /* Espaçamento entre os itens */
+  font-size: 16px;
 }
 
 button[mat-button]:hover {
   background-color: rgba(184, 134, 11, 0.2);
+  color: #fff;
 }
 
 main {
   padding: 2rem;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 160px);
   /* Ajuste para cabeçalho/rodapé */
   margin-top: 60px;
   /* Ajuste o valor conforme necessário */
@@ -97,6 +99,7 @@ footer {
     /* Empilha os itens na vertical */
     text-align: center;
     /* Centraliza os itens */
+    font-size: 14px; 
   }
 
   mat-toolbar a {

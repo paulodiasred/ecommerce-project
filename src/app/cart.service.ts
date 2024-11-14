@@ -1,68 +1,63 @@
 import { Injectable } from '@angular/core';
-import { Product } from './product.service'; // Importe o modelo de Produto
+import { BehaviorSubject } from 'rxjs';
 import { CartProduct } from './cart/cart-product.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
-  private items: Product[] = [];
+  private cartItemsSubject = new BehaviorSubject<CartProduct[]>([]); // Armazena o estado do carrinho
+  cartItems$ = this.cartItemsSubject.asObservable(); // Observable que os componentes podem se inscrever
 
   constructor() {
-    // Carrega itens do `localStorage` ao inicializar o serviço
-    this.loadCart();
-  }
-
-  addToCart(product: Product) {
-    this.items.push(product);
-    this.saveCart(); // Atualiza o `localStorage`
-  }
-
-  getItems(): Product[] {
-    return this.items;
-  }
-
-  clearCart() {
-    this.items = [];
-    this.saveCart(); // Limpa o `localStorage`
-    return this.items;
-  }
-
-  removeItem(productId: number): void {
-    this.items = this.items.filter(item => item.id !== productId);
-    console.log('Item removido:', productId); // Log para confirmar que a remoção foi feita
-    console.log('Itens restantes:', this.items); // Log para verificar o estado atual
-    this.saveCart(); // Atualiza o `localStorage` após remover
-  }
-
-  updateCart(updatedProducts: CartProduct[]): void {
-    localStorage.setItem('cartItems', JSON.stringify(updatedProducts)); // Armazenando no localStorage, ou usando outro meio de persistência
-  }
-
-  private saveCart(): void {
-    if (this.isLocalStorageAvailable()) {
-      localStorage.setItem('cartItems', JSON.stringify(this.items));
-    }
-  }
-
-  private loadCart(): void {
-    if (this.isLocalStorageAvailable()) {
-      const storedItems = localStorage.getItem('cartItems');
-      if (storedItems) {
-        this.items = JSON.parse(storedItems);
+    // Ao inicializar o serviço, tentamos carregar os itens do carrinho do localStorage
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const savedCartItems = localStorage.getItem('cartItems');
+      if (savedCartItems) {
+        this.cartItemsSubject.next(JSON.parse(savedCartItems));
       }
     }
   }
 
-  // Verifica se localStorage está disponível
-  private isLocalStorageAvailable(): boolean {
-    try {
-      const testKey = '__test__';
-      localStorage.setItem(testKey, testKey);
-      localStorage.removeItem(testKey);
-      return true;
-    } catch (e) {
-      return false;
+  // Método para adicionar um item ao carrinho
+  addToCart(product: CartProduct): void {
+    if (!product.quantity) {
+      product.quantity = 1; // Se não tiver, define como 1
     }
+    const cartItems = this.cartItemsSubject.value;
+    const existingProduct = cartItems.find(item => item.id === product.id);
+
+    if (existingProduct) {
+      existingProduct.quantity += 1; // Incrementa a quantidade se o produto já estiver no carrinho
+    } else {
+      cartItems.push(product);
+    }
+    this.updateCart(cartItems);
+  }
+
+  // Método para remover um item do carrinho
+  removeItem(productId: number): void {
+    const updatedItems = this.cartItemsSubject.value.filter(item => item.id !== productId);
+    this.updateCart(updatedItems);
+  }
+
+  // Atualiza o carrinho e salva no localStorage
+  public updateCart(cartItems: CartProduct[]): void {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Salva no localStorage
+    }
+    this.cartItemsSubject.next(cartItems); // Emite a nova lista de itens
+  }
+
+  clearCart(): void {
+    this.cartItemsSubject.next([]);  // Limpa o carrinho
+    if (typeof window !== 'undefined' && window.localStorage) {
+      localStorage.removeItem('cartItems');  // Remove do localStorage
+    }
+  }
+
+  // Método para recuperar os itens do carrinho
+  getItems(): CartProduct[] {
+    return this.cartItemsSubject.value;
   }
 }

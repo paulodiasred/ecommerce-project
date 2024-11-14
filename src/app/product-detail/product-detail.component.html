@@ -3,11 +3,23 @@
     <div *ngIf="product">
       <h2>{{ product.name }}</h2>
       <img [src]="product.imageUrl" alt="{{ product.name }}">
-      <p>{{ product.description }}</p>
-      <p class="price">Preço: R$ {{ product.price }}</p>
-      <button (click)="addToCart(product)">Adicionar ao Carrinho</button>
-      <button class="back-button" (click)="goBack()">Voltar</button> <!-- Botão de Voltar -->
 
+      <p><strong>Descrição:</strong> {{ product.description }}</p>
+      <p class="price"><strong>Preço:</strong> R$ {{ product.price }}</p>
+      
+      <p><strong>Gênero:</strong> {{ product.genre }}</p>
+      <p><strong>Desenvolvedor:</strong> {{ product.developer }}</p>
+      <p><strong>Ano de Lançamento:</strong> {{ product.releaseYear }}</p>
+      <p><strong>Avaliação:</strong> {{ product.rating }} ★</p>
+
+      <!-- Trailer -->
+      <div *ngIf="product.trailerUrl">
+        <p><strong>Assista ao Trailer:</strong></p>
+        <iframe width="560" height="315" [src]="sanitizedTrailerUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <button (click)="addToCart(product)">Adicionar ao Carrinho</button>
+      <button class="back-button" (click)="goBack()">Voltar</button>
     </div>
   </div>
 </div>

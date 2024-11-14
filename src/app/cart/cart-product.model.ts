@@ -1,5 +1,3 @@
-// cart-product.model.ts
-
 import { Product } from '../product.service'; // Corrija o caminho se necessário
 export interface CartProduct extends Product {
   id: number;

@@ -5,7 +5,7 @@
   <p>Explore os melhores produtos e ofertas exclusivas.</p>
 </div>
 <div class="products-container">
-    <mat-card *ngFor="let product of featuredProducts" class="product-card">
+    <mat-card class="product-card" *ngFor="let product of featuredProducts" class="product-card">
     <mat-card-header>
       <mat-card-title>{{ product.name }}</mat-card-title>
       <mat-card-subtitle>Preço: R$ {{ product.price }}</mat-card-subtitle>
