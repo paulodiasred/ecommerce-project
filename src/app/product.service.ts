@@ -28,7 +28,7 @@ export class ProductService {
       developer: 'CD Projekt Red',
       releaseYear: 2015,
       rating: 4.9,
-      trailerUrl: 'https://www.youtube.com/watch?v=W3VY5zVdDmc' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/c0i88t0Kacs' // Trailer do jogo
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ export class ProductService {
       developer: 'CD Projekt Red',
       releaseYear: 2020,
       rating: 4.1,
-      trailerUrl: 'https://www.youtube.com/watch?v=8Xb-VOKz5yM' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/8X2kIfS6fb8' // Trailer do jogo
     },
     {
       id: 3,
@@ -64,7 +64,7 @@ export class ProductService {
       developer: 'Rockstar Games',
       releaseYear: 2018,
       rating: 5.0,
-      trailerUrl: 'https://www.youtube.com/watch?v=eaWvMlPEdj8' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/gmA6MrX81z4' // Trailer do jogo
     },
     {
       id: 5,
@@ -76,7 +76,7 @@ export class ProductService {
       developer: 'id Software',
       releaseYear: 2020,
       rating: 4.7,
-      trailerUrl: 'https://www.youtube.com/watch?v=2dPNWdzXeYo' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/_UuktemkCFI' // Trailer do jogo
     },
     {
       id: 6,
@@ -88,7 +88,7 @@ export class ProductService {
       developer: 'Ubisoft',
       releaseYear: 2020,
       rating: 4.6,
-      trailerUrl: 'https://www.youtube.com/watch?v=G37FFtMvv58' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/ssrNcwxALS4' // Trailer do jogo
     },
     {
       id: 7,
@@ -100,7 +100,7 @@ export class ProductService {
       developer: 'Rockstar North',
       releaseYear: 2013,
       rating: 4.9,
-      trailerUrl: 'https://www.youtube.com/watch?v=QkkoHAzjnUs' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/QkkoHAzjnUs' // Trailer do jogo
     },
     {
       id: 8,
@@ -112,7 +112,7 @@ export class ProductService {
       developer: 'Guerrilla Games',
       releaseYear: 2017,
       rating: 4.8,
-      trailerUrl: 'https://www.youtube.com/watch?v=uqT8fvYDhYQ' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/rgDYyxOKBgg' // Trailer do jogo
     },
     {
       id: 9,
@@ -124,7 +124,7 @@ export class ProductService {
       developer: 'FromSoftware',
       releaseYear: 2019,
       rating: 4.9,
-      trailerUrl: 'https://www.youtube.com/watch?v=JwzxvCv2bK0' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/4OgoTZXPACo' // Trailer do jogo
     },
     {
       id: 10,
@@ -136,7 +136,7 @@ export class ProductService {
       developer: 'FromSoftware',
       releaseYear: 2022,
       rating: 5.0,
-      trailerUrl: 'https://www.youtube.com/watch?v=2xuD_HmcY5w' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/AKXiKBnzpBQ' // Trailer do jogo
     },
     {
       id: 11,
@@ -148,7 +148,7 @@ export class ProductService {
       developer: 'Capcom',
       releaseYear: 2021,
       rating: 4.8,
-      trailerUrl: 'https://www.youtube.com/watch?v=fyH6bgzP5e0' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/CNpIfP4vtrE' // Trailer do jogo
     },
     {
       id: 12,
@@ -160,7 +160,7 @@ export class ProductService {
       developer: '343 Industries',
       releaseYear: 2021,
       rating: 4.6,
-      trailerUrl: 'https://www.youtube.com/watch?v=4Jr6AOP5_0A' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/rFh2i4AlPD4' // Trailer do jogo
     },
     {
       id: 13,
@@ -172,7 +172,7 @@ export class ProductService {
       developer: 'Mojang Studios',
       releaseYear: 2011,
       rating: 4.9,
-      trailerUrl: 'https://www.youtube.com/watch?v=MmB9b5njVbA' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/MmB9b5njVbA' // Trailer do jogo
     },
     {
       id: 14,
@@ -184,7 +184,7 @@ export class ProductService {
       developer: 'Infinity Ward',
       releaseYear: 2019,
       rating: 4.7,
-      trailerUrl: 'https://www.youtube.com/watch?v=3cdThcGoRpg' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/6IUzGzFJHBw' // Trailer do jogo
     },
     {
       id: 15,
@@ -196,7 +196,7 @@ export class ProductService {
       developer: 'Blizzard Entertainment',
       releaseYear: 2016,
       rating: 4.7,
-      trailerUrl: 'https://www.youtube.com/watch?v=Fql80j2q60g' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/dushZybUYnM' // Trailer do jogo
     },
     {
       id: 16,
@@ -208,7 +208,7 @@ export class ProductService {
       developer: 'Maxis',
       releaseYear: 2014,
       rating: 4.5,
-      trailerUrl: 'https://www.youtube.com/watch?v=1yNkT5BrfIA' // Trailer do jogo
+      trailerUrl: 'https://www.youtube.com/embed/DL2hlOIf-PM' // Trailer do jogo
     }
   ];
   
