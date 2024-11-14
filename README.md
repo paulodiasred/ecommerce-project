@@ -2,6 +2,8 @@
 
 Bem-vindo ao **E-commerce do Paulão**! Este é um projeto de e-commerce desenvolvido usando Angular e Angular Material. A aplicação apresenta uma interface moderna e responsiva, com componentes standalone para maior eficiência.
 
+![tela inicial](src/assets/images/home.png)
+
 ---
 
 ## 🛠️ Tecnologias Utilizadas
@@ -13,6 +15,9 @@ Bem-vindo ao **E-commerce do Paulão**! Este é um projeto de e-commerce desenvo
 - **Node.js** - para execução do servidor local
 
 ---
+
+![home 2](src/assets/images/home2.png)
+
 
 ## 🎯 Objetivos do Projeto
 
@@ -33,6 +38,9 @@ O objetivo deste projeto é criar uma aplicação de e-commerce funcional, respo
 - **Trailer de Produtos:** Exibição de trailers de produtos no YouTube com a URL sanitizada para maior segurança.
 
 ---
+
+![produtos](src/assets/images/produtos.png)
+
 
 ## 🔧 Configuração do Projeto
 
@@ -60,6 +68,9 @@ bash
 Copiar código
 ng serve
 O servidor será iniciado em http://localhost:4200/.
+
+![detalhes](src/assets/images/detalhes.png)
+
 
 ## 📂 Estrutura do Projeto
 ```
@@ -107,6 +118,7 @@ ecommerce-angular/
 - Imagem, preço, gênero, desenvolvedor, ano de lançamento, avaliação, e trailer do produto.
 
 ---
+![loguin](src/assets/images/loguin.png)
 
 ## 📸 Imagens
 - Página Inicial
@@ -121,6 +133,9 @@ ecommerce-angular/
   
 ---
 
+![checkout](src/assets/images/checkout.png)
+
+
 ## 📜 Licença
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 
@@ -128,6 +143,8 @@ Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE par
 
 ## ✨ Contribuindo
 Contribuições são bem-vindas! Siga os passos abaixo para contribuir com o projeto:
+
+![resumo](src/assets/images/resumo.png)
 
 Faça um fork do repositório.
 1. Crie uma nova branch (git checkout -b feature/sua-feature).
