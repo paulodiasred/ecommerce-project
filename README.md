@@ -1,5 +1,3 @@
-## EM ANDAMENTO
-
 # E-commerce Angular Project
 
 Bem-vindo ao **E-commerce do Paulão**! Este é um projeto de e-commerce desenvolvido usando Angular e Angular Material. A aplicação apresenta uma interface moderna e responsiva, com componentes standalone para maior eficiência.
@@ -31,6 +29,8 @@ O objetivo deste projeto é criar uma aplicação de e-commerce funcional, respo
 - **Detalhes do Produto:** Página detalhada para cada produto com informações específicas.
 - **Uso de Angular Material:** Interface moderna usando componentes como `mat-card`, `mat-button` e `mat-dialog`.
 - **Validações de Formulário:** Validação de campos obrigatórios e formatação.
+- **Efeito de Zoom nas Imagens:** Imagens de produtos com efeito de aumento suave ao passar o mouse.
+- **Trailer de Produtos:** Exibição de trailers de produtos no YouTube com a URL sanitizada para maior segurança.
 
 ---
 
@@ -61,7 +61,7 @@ Copiar código
 ng serve
 O servidor será iniciado em http://localhost:4200/.
 
-📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 ```
 ecommerce-angular/
 │
@@ -85,7 +85,7 @@ ecommerce-angular/
 │   └── index.html (ponto de entrada principal)
 └── ...
 ```
-🚀 Funcionalidades em Detalhes
+## 🚀 Funcionalidades em Detalhes
 1. Home
 - Exibe produtos em destaque.
 - Imagem de banner com texto sobreposto.
@@ -104,22 +104,29 @@ ecommerce-angular/
 - Exibição das informações fornecidas pelo usuário.
 5. Detalhes do Produto
 - Descrição completa dos produtos.
-- Imagem, preço e outras informações relevantes.
-📸 Imagens
-Página Inicial
+- Imagem, preço, gênero, desenvolvedor, ano de lançamento, avaliação, e trailer do produto.
 
-Carrinho de Compras
+---
 
-Checkout
+## 📸 Imagens
+- Página Inicial
 
-📚 Bibliotecas e Dependências
-- Angular Material
-- @angular/router
-- TypeScript
-📜 Licença
+---
+
+## 📚 Bibliotecas e Dependências
+- Angular Material - Biblioteca de componentes para UI moderna.
+- @angular/router - Roteamento para navegação entre páginas.
+- TypeScript - Linguagem para o desenvolvimento da aplicação.
+- RxJS - Biblioteca para programação reativa
+  
+---
+
+## 📜 Licença
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 
-✨ Contribuindo
+---
+
+## ✨ Contribuindo
 Contribuições são bem-vindas! Siga os passos abaixo para contribuir com o projeto:
 
 Faça um fork do repositório.
@@ -127,6 +134,6 @@ Faça um fork do repositório.
 2. Commit suas mudanças (git commit -m 'Adicione sua mensagem').
 3. Push para a branch (git push origin feature/sua-feature).
 4. Abra um Pull Request.
-5. 
-Feito com ❤️ por Paulo Dias.
+
+## Feito com ❤️ por Paulo Dias.
 
