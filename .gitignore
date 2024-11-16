@@ -6,3 +6,5 @@ node_modules/
 
 # Ignorar arquivos com extensão .pack
 *.pack
+
+
